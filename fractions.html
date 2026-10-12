@@ -74,7 +74,7 @@ function range(a, b) { const r = []; for (let i = a; i <= b; i++) r.push(i); ret
 function proper(ds) { const out = []; for (const d of ds) for (let n = 1; n < d; n++) if (gcd(n, d) === 1) out.push(card(n, d)); return out; }
 
 const DECKS = {
-  weak: { name: "Weak spots", sub: "1/21, 1/24, 1/27, 1/36, sevenths and yesterday's misses",
+  weak: { name: "Weak spots", sub: "1/21, 1/24, 1/27, 1/36, sevenths and your misses from 12 Oct",
     cards: () => ["1/21","1/24","1/27","1/36","23/27","13/21","31/36","9/22","1/14","1/18","4/7","3/7","5/7","6/7","2/7","1/7","5/14","11/14","7/18","13/36"].map(s => card(...s.split("/").map(Number))) },
   core: { name: "Core", sub: "every n/d with d from 2 to 12", cards: () => proper(range(2, 12)) },
   units: { name: "Unit fractions", sub: "1/2 to 1/40", cards: () => range(2, 40).map(d => card(1, d)) },
